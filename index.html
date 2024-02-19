@@ -403,14 +403,22 @@
                         </ul>
                     </div>
 
+                    <div class="p-2 border-b-2 border-dashed ">
+                        <ul class="flex justify-between text-black px-3 font-inter">
+                            <li>Total Price</li>
+
+                            <li>BDT<span id="total-cost">0</span></li>
+                        </ul>
+                    </div>
+
                     <!-- coupon input -->
 
                     <div class="input flex justify-between items-center my-4 ">
                         <div>
-                            <input type="text" class="" placeholder="Have any copupon?" />
+                            <input  type="text" class="" placeholder="Have any copupon?" />
                         </div>
                         <div>
-                            <button class="btn bg-[#1dd100] text-white">Apply</button>
+                            <button id="apply" class="btn bg-[#1dd100] text-white">Apply</button>
                         </div>
                     </div>
 
@@ -418,27 +426,18 @@
                         <ul class="flex justify-between text-black px-3 font-inter">
                             <li>Grand Total</li>
 
-                            <li>BDT<span>0</span></li>
+                            <li>BDT<span id="grand-total-price">0</span></li>
                         </ul>
                     </div>
 
 
-                    <!-- <table class="table ">
-
-                        <tfoot>
-                            <td class="text-black ">Grand Total </td>
-                            <td> </td>
-                            <td class="text-black px-3 ">BDT <span>0</span></td>
-                        </tfoot>
-
-                    </table> -->
-
+                   
 
                 </div>
 
                 <div class="flex flex-col ">
-                    <h1 class="text-xl font-bold py-3">Passenger Name</h1>
-                    <input class="h-10 border-2 border-gray-200 rounded-md px-3" type="text"
+                    <h1 class=" text-xl font-bold py-3">Passenger Name</h1>
+                    <input class="required: h-10 border-2 border-gray-200 rounded-md px-3" type="text"
                         placeholder="Enter your name">
                     <h1 class="text-xl font-bold py-3">Phone Number</h1>
                     <input class="h-10 border-2 border-gray-200 rounded-md px-3" type="text"
