@@ -42,10 +42,34 @@ for(const btn of addBtn){
     cost('total-cost',seatPrice);
     // grandCost('grand-total-price',seatPrice);
    
-
+    document.getElementById('apply').addEventListener('click', function() {
+        const couponCode = document.getElementById('coupon-input').value;
+        let discount = 0;
+        
+        if (couponCode === 'NEW15') {
+            discount = 15;
+        } else if (couponCode === 'Couple 20' && (count>1)) {
+            discount= 20;
+        }
+    
+        const totalCost = parseFloat(document.getElementById('total-cost').innerText);
+        const discountAmount = (totalCost * discount) / 100;
+        const grandTotal = Math.round(totalCost - discountAmount);
+     
+    
+        setInnerText('grand-total-price', grandTotal);
+        hideElementById('coupon');
+        
+    });
+    
+   
     
     }
    
+    else{
+
+        alert("you can't select more than four seats!");
+    }
 
     });
 
@@ -53,25 +77,15 @@ for(const btn of addBtn){
 }
 
 function cost(elementId,value) {
-
-    
     const totalCost = document.getElementById(elementId).innerText;
     const numberTotalCost = parseInt(totalCost); 
     const sum = numberTotalCost + value;
     setInnerText(elementId, sum);
 }
-function grandCost() {
-
+function hideElementById(elementId) {
+    const element =document.getElementById(elementId);
+    element.classList.add('hidden');
     
-    // const totalCost = document.getElementById(elementId).innerText;
-    // const numberTotalCost = parseInt(totalCost); 
-    // const sum = numberTotalCost + value;
-    // setInnerText(elementId, sum);
-
-     const totalCost = document.getElementById('total-cost').innerText;
-    const numberTotalCost = parseInt(totalCost); 
-
-    setInnerText('grand-total-price', numberTotalCost);
 }
 
 function setInnerText(elementId,value)
